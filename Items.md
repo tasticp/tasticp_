@@ -1,43 +1,72 @@
-<details>
-<summary>All OS</summary>
 
+## All OS
+
+Helium Browser <https://helium.computer/>
+Zen Browser <https://zen-browser.app/>
 Arc Browser <https://arc.net/>
 
-  <details>
-  <summary>Windows</summary>
+### Windows
 
-  </details>
-  
-  <details>
-  <summary>Apple</summary>
+### Apple
 
   Raycast (productivity app)  <https://www.raycast.com/ios>
-
-  Dia Browser (AI browser) <https://www.diabrowser.com/>
 
   Project Indigo (camera app)  <https://apps.apple.com/us/app/project-indigo/id6742591546>
 
   Not Boring (apps) <https://notbor.ing/>
 
-  </details>
+### Objects
+  [Baliscissors](https://www.youtube.com/playlist?list=PLAfxqCh9yWH5yejLNLTJLcogpVeFKXi4N/)
   
-</details>
-<details>
-<summary>Fidget</summary>
+  I modeling a different design in Onshape
 
-</details>
+### Games
+  #### Freshly Frosted
+  #### Un/Fragment
+  #### The Bridge
+  #### Doors: Paradox
+  #### Trackmania
+  #### 100 [Blank] Cats
+  #### Please Touch The Artwork 2
 
-<details>
-<summary>Websites</summary>
+### Anime
+  #### No Game No Life
+  #### Kuma Kuma Kuma Bear
+  #### Boarding School Juilet
+  #### Bofuri (not the 3D parts)
+  #### Pet no Sakura-sou
+  #### A Sister's all you need
 
-</details>
+### Software
+  #### Zed
+  #### Reaper
+  #### Spotify
+  #### Affinity
+  #### Davinci Resolve
+  #### Notion / Obsidian
+  #### Others
 
-<details>
-<summary>Games</summary>
+### Websites
 
-</details>
-
-<details>
-<summary>Anime</summary>
-
-</details>
+<!--### C*u*h*s
+    #### ???
+    #### Ashiqin????
+    #### Xiang Ting
+    #### Track and Field
+    #### Xuan?
+    #### J
+    #### N
+    #### S
+    #### A
+    #### Z
+    #### G
+    #### D / W
+    #### Ni
+    #### J
+    #### S R
+    #### C
+    #### Ce
+    #### He
+    #### Kwok 
+    #### C
+    #### -->

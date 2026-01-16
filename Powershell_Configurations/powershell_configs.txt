@@ -1,0 +1,90 @@
+C:\Users\tasticp\AppData\Local\Programs\oh-my-posh\themes
+C:\Users\tasticp\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
+
+#######ZED
+C:/Users/tasticp/Documents/PowerShell/Microsoft.PowerShell_profile.ps1
+C:/Users/tasticp/AppData/Local/Programs/Zed/.config/fastfetch
+#######ZED
+
+#############You can temporarily add it to your current session's PATH using the following command (replace the path if yours is different):    powershell
+
+$env:Path += ";C:\Users\tasticp\AppData\Local\Programs\oh-my-posh\bin\"
+
+#############After running this, try your original command again: powershell
+
+oh-my-posh get shell
+
+winget install fastfetch
+
+fastfetch in .config in C:\Users\tasticp\.config\fastfetch
+
+C:\Users\tasticp\Documents\WindowsPowerShell
+
+fastfetch -c "C:/Users/tasticp/.config/fastfetch/config.jsonc"
+
+############################################################################################
+fastfetch -c "C:/Users/tasticp/Desktop/Z/test/config.jsonc"
+############################################################################################
+
+
+##################################################   Microsoft.PowerShell_profile.ps1  ##################################################
+# Suppress command echoing
+$ErrorActionPreference = 'SilentlyContinue'
+
+# UTF-8 encoding setup
+try {
+    [Console]::InputEncoding  = [System.Text.Encoding]::UTF8
+    [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+    $OutputEncoding = [System.Text.UTF8Encoding]::new($false)
+    chcp 65001 > $null 2>&1
+} catch {}
+
+# Oh My Posh initialization
+oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/dracula.omp.json" | Invoke-Expression
+
+Clear-Host
+
+# Fastfetch with random logo on startup
+if (Get-Command fastfetch -ErrorAction SilentlyContinue) {
+    $logos = @(
+        "C:/Users/tasticp/.config/fastfetch/ascii.txt",
+        "C:/Users/tasticp/.config/fastfetch/ascii_cathey.txt"
+    )
+    fastfetch -c "C:/Users/tasticp/.config/fastfetch/config.jsonc" --logo (Get-Random -InputObject $logos)
+}
+
+# Function for manual runs
+function ff {
+    $logos = @(
+        "C:/Users/tasticp/.config/fastfetch/ascii.txt",
+        "C:/Users/tasticp/.config/fastfetch/ascii_cathey.txt"
+    )
+    fastfetch -c "C:/Users/tasticp/.config/fastfetch/config.jsonc" --logo (Get-Random -InputObject $logos)
+}
+##################################################   powershell_configs.txt.ps1  ##################################################
+
+##################################################     Other     ##################################################
+neofetch
+GlazeWM
+YASB
+##################################################     Other     ##################################################
+
+##################################################                              ##################################################
+$1╭─── Tasticp_ · Code · v3.0 ─────────────────────────────────────────────────────────────────────────────────────────────╮
+$1│                                                    │                                                                   │
+$2│               Welcome back tasticp_!               │ $9 //TODO Portfolio,Music,Art,Zed-Browser                           $2│
+$2│                                                    │ ───────────────────────────────────────────────────────────────── │
+$3│                                                    │                                                                   │
+$3│                                                    │ $9 Protfolio                                                        $3│
+$4│                        │•ᴗ•│                       │ $9 No recent activity                                               $4│
+$4│                      ▝▜██ ██▛▘                     │ $9 No recent activity                                               $4│
+$5│                        ▘   ▝                       │ $9 No recent activity                                               $5│
+$6│                                                    │ $9 No recent activity                                               $6│
+$6│                                                    │ $9 No recent activity                                               $6│
+$7│                                                    │ $9                                                                  $7│
+$7│                                                    │ $9                                                                  $7│
+$8│    Home Desktop · Powershell · tasticp_‘s          │                                                                   │
+$8│    Individual                                      │                                                                   │
+$9│    ~\C:\Users\tasticp\Documents\WindowsPowerShell  │                                                                   │
+$9╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+##################################################                              ##################################################

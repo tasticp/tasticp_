@@ -1,0 +1,17 @@
+$1╭─── Tasticp_ · Code · v3.0 ─────────────────────────────────────────────────────────────────────────────────────────────╮
+$1│                                                    │                                                                   │
+$2│               Welcome back tasticp_!               │ $9 //TODO Portfolio,Music,Art,Zed-Browser                           $2│
+$2│                                                    │ ───────────────────────────────────────────────────────────────── │
+$3│                                                    │                                                                   │
+$3│                                                    │ $9 Protfolio                                                        $3│
+$4│                        │•ᴗ•│                       │ $9 No recent activity                                               $4│
+$4│                      ▝▜██ ██▛▘                     │ $9 No recent activity                                               $4│
+$5│                        ▘   ▝                       │ $9 No recent activity                                               $5│
+$6│                                                    │ $9 No recent activity                                               $6│
+$6│                                                    │ $9 No recent activity                                               $6│
+$7│                                                    │ $9                                                                  $7│
+$7│                                                    │ $9                                                                  $7│
+$8│    Home Desktop · Powershell · tasticp_‘s          │                                                                   │
+$8│    Individual                                      │                                                                   │
+$9│    ~\C:\Users\tasticp\Documents\WindowsPowerShell  │                                                                   │
+$9╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯

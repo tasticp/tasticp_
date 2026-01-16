@@ -18,7 +18,8 @@ Clear-Host
 if (Get-Command fastfetch -ErrorAction SilentlyContinue) {
     $logos = @(
         "C:/Users/tasticp/.config/fastfetch/ascii.txt",
-        "C:/Users/tasticp/.config/fastfetch/ascii_cathey.txt"
+        "C:/Users/tasticp/.config/fastfetch/ascii_cathey.txt",
+        "C:/Users/tasticp/.config/fastfetch/asclaude.txt"
     )
     fastfetch -c "C:/Users/tasticp/.config/fastfetch/config.jsonc" --logo (Get-Random -InputObject $logos)
 }
@@ -26,8 +27,10 @@ if (Get-Command fastfetch -ErrorAction SilentlyContinue) {
 # Function for manual runs
 function ff {
     $logos = @(
+        "C:/Users/tasticp/.config/fastfetch/asclaude.txt",
         "C:/Users/tasticp/.config/fastfetch/ascii.txt",
         "C:/Users/tasticp/.config/fastfetch/ascii_cathey.txt"
+
     )
     fastfetch -c "C:/Users/tasticp/.config/fastfetch/config.jsonc" --logo (Get-Random -InputObject $logos)
 }
