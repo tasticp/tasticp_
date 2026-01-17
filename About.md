@@ -10,17 +10,10 @@
 -->
 [![Netlify Status](https://api.netlify.com/api/v1/badges/32201c75-f924-4bfa-8971-cb69abd8b9cc/deploy-status)](https://app.netlify.com/projects/godstype/deploys)
 
-## Some Files
-
-- [Things](https://github.com/tasticp/tasticp_/blob/main/Items.md)
-
-- [FAQ](https://github.com/tasticp/tasticp_/blob/main/FAQ.md)
+- [FAQ](https://github.com/tasticp/tasticp_/blob/main/Items/FAQ.md)
 
 ## Feedback
 - If you have any feedback, please reach out to us after never
-
-## About Me
-- Just look at [this](https://github.com/tasticp) i guess 
 
 ## 🔗 Links
 - I would genuienly be impressed if u can find me in person/or online and show me really old photos/relations/really just anything abt me that isn't readily avalible
@@ -34,3 +27,25 @@
 ## License
 
 - [MIT](https://www.youtube.com/watch?v=dQw4w9WgXcQ) Modify It Thot / Modify It Twat
+
+## Some Files
+
+- [Items](https://github.com/tasticp/tasticp_/blob/main/Items/Items.md)
+
+- [Windows](https://github.com/tasticp/tasticp_/blob/main/Items/Windows.md)
+
+- [Apple](https://github.com/tasticp/tasticp_/blob/main/Items/Apple.md)
+
+- [Games](https://github.com/tasticp/tasticp_/blob/main/Items/Games.md)
+
+- [Anime](https://github.com/tasticp/tasticp_/blob/main/Items/Anime.md)
+
+- [Software](https://github.com/tasticp/tasticp_/blob/main/Items/Software.md)
+
+- [Websites](https://github.com/tasticp/tasticp_/blob/main/Items/Websites.md)
+
+- [Songs](https://github.com/tasticp/tasticp_/blob/main/Items/Songs.md)
+
+- [Art](https://github.com/tasticp/tasticp_/blob/main/Items/Art.md)
+
+
