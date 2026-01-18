@@ -32,7 +32,7 @@ else if exist "C:\Users\tasticp\AppData\Local\Programs\Zed\zed.exe"(
     echo.
     echo You can now KYS jkjk, idk man look at my other shits?
     echo   - u - ???
-    echo   - Command palette - search "?????"
+    echo   - ?????? - ?????? "?????"
     pause
     goto end
 ) else (
