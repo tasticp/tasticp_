@@ -1,0 +1,10 @@
+{
+  "name": "tasticp_",
+  "image": "mcr.microsoft.com/devcontainers/anaconda", //:latest",
+  "features": {
+    "ghcr.io/devcontainers-extra/features/neofetch:1": {},
+    "ghcr.io/jpawlowski/devcontainer-features/powershell-extended:2": {
+      "installOhMyPosh": true,
+    },
+  },
+}
