@@ -4,8 +4,15 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
+    /*"type": "raw", // DO NO"T USE "auto"*/
     /*  */ "type": "file" /* */,
-    "source": "C:/Users/%USERNAME%/Documents/WindowsPowerShell/Microsoft.PowerShell_profile.ps1",
+    /*"source": "C:/Users/tasticp/Desktop/Z/test/jpg.0.sixel",*/
+    /*"source": "C:/Users/ricks/OneDrive - Ngee Ann Polytechnic/.config/fastfetch/WindowsPowerShell/Microsoft.PowerShell_profile.ps1",*/
+    "source": "$PROFILE",
+
+    /*"source": "C:/Users/tasticp/Documents/WindowsPowerShell/Microsoft.PowerShell_profile.ps1",*/
+    /*"source": "C:/Users/tasticp/AppData/Local/Programs/Zed/.config/fastfetch/ascii_cathey.txt",*/
+    /* "source": "C:/Users/tasticp/.config/fastfetch/ascii_cathey.txt"*/
     /*"width": 40, // Required"height": 20, // Required*/
     "color": {
       //$1  $1  $1  $1  $2  $2  $3  $3  $3  $4  $4  $6  $6  $7  $7  $7  $8  $8  $9  $9  $9  $9
@@ -31,101 +38,38 @@
     "break",
     {
       "type": "title",
-      "color": {
-        "user": "#F5C2E7",
-        "at": "#CDD6F4",
-        "host": "#89DCEB",
-      },
+      "color": { "user": "#F5C2E7", "at": "#CDD6F4", "host": "#89DCEB" },
     },
     "break",
-    {
-      "type": "os",
-      "key": "",
-      "keyColor": "#89DCEB",
-    }, ////
-    {
-      "type": "cpu",
-      "key": "",
-      "keyColor": "#F5C2E7",
-    },
+    { "type": "os", "key": "", "keyColor": "#89DCEB" }, ////
+    { "type": "cpu", "key": "", "keyColor": "#F5C2E7" },
     {
       "type": "gpu",
-      "format": "{name}", // See `fastfetch -h gpu-format` for details
+      "format": "{name}" /*See `fastfetch -h gpu-format` for details*/,
       "key": "",
       "keyColor": "#9A91DE",
     },
-    {
-      "type": "board",
-      "key": "󰚗",
-      "keyColor": "#FAB387",
-    },
+    { "type": "board", "key": "󰚗", "keyColor": "#FAB387" },
     {
       "type": "memory",
       "key": "",
       "keyColor": "#A6E3A1",
       "format": "{used} / {total} ({percentage})",
     },
-    {
-      "type": "disk",
-      "key": "",
-      "keyColor": "#94E2D5",
-    },
+    { "type": "disk", "key": "", "keyColor": "#94E2D5" },
     ////////////////////////////////
-    {
-      "type": "kernel",
-      "key": "𝄋",
-      "keyColor": "#70FFDB",
-    }, //🙨
-    {
-      "type": "uptime",
-      "key": "𝄋",
-      "keyColor": "#7EF1DE",
-    }, //https://www.compart.com/en/unicode/U+1D10B
-    {
-      "type": "shell",
-      "key": "🙨",
-      "keyColor": "#8CE3E0",
-    }, //🙨
-    {
-      "type": "terminal",
-      "key": "",
-      "keyColor": "#8ED6E0",
-    }, //𝄋
-    {
-      "type": "display",
-      "key": "❖",
-      "keyColor": "#90C8E0",
-    }, //❤////
-    {
-      "type": "de",
-      "key": "🏶",
-      "keyColor": "#91B9DF",
-    },
-    {
-      "type": "wm",
-      "key": "🖿",
-      "keyColor": "#91B9DF",
-    }, //https://www.compart.com/en/unicode/U+1F5BF//
-    {
-      "type": "swap",
-      "key": "⯎",
-      "keyColor": "#91A9DE",
-    }, //❖
-    {
-      "type": "disk",
-      "key": "⯏",
-      "keyColor": "#969DDE",
-    },
-    {
-      "type": "localip",
-      "key": "🧋",
-      "keyColor": "#F5C2E7",
-    }, //https://www.compart.com/en/unicode/U+1F9CB
+    { "type": "kernel", "key": "𝄋", "keyColor": "#70FFDB" }, //🙨
+    { "type": "uptime", "key": "𝄋", "keyColor": "#7EF1DE" }, //https://www.compart.com/en/unicode/U+1D10B
+    { "type": "shell", "key": "🙨", "keyColor": "#8CE3E0" }, //🙨
+    { "type": "terminal", "key": "", "keyColor": "#8ED6E0" }, //𝄋
+    { "type": "display", "key": "❖", "keyColor": "#90C8E0" }, //❤////
+    { "type": "de", "key": "🏶", "keyColor": "#91B9DF" },
+    { "type": "wm", "key": "🖿", "keyColor": "#91B9DF" }, //https://www.compart.com/en/unicode/U+1F5BF//
+    { "type": "swap", "key": "⯎", "keyColor": "#91A9DE" }, //❖
+    { "type": "disk", "key": "⯏", "keyColor": "#969DDE" },
+    { "type": "localip", "key": "🧋", "keyColor": "#F5C2E7" }, //https://www.compart.com/en/unicode/U+1F9CB
     "battery", //pc is hidden by default
     "break",
-    {
-      "type": "colors",
-      "symbol": "circle",
-    }, ///https://symbl.cc/en/unicode-table/#supplementary-private-use-area-b
+    { "type": "colors", "symbol": "circle" }, ///https://symbl.cc/en/unicode-table/#supplementary-private-use-area-b
   ],
 }

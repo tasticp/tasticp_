@@ -108,6 +108,7 @@ root@tasticp:~/.config/powershell# nano Microsoft.PowerShell_profile.ps1
 
 paste this but change the file of .txt aka the image and change the theme if you want
 '''
+##################################################   Microsoft.PowerShell_profile.ps1  ##################################################
 # Suppress command echoing
 $ErrorActionPreference = 'SilentlyContinue'
 
@@ -122,28 +123,41 @@ try {
 # Oh My Posh initialization
 oh-my-posh init pwsh --config 'https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/catppuccin_mocha.omp.json' | Invoke-Expression
 
+# oh-my-posh init pwsh --config 'https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/dracula.omp.json' | Invoke-Expression
+
+
 Clear-Host
 
 # Fastfetch with random logo on startup
 if (Get-Command fastfetch -ErrorAction SilentlyContinue) {
     $logos = @(
-        "C:/Users/tasticp/OneDrive/Documents/.config/fastfetch/ascii.txt",
-        "C:/Users/tasticp/OneDrive/Documents/.config/fastfetch/ascii_cathey.txt",
-	"C:/Users/tasticp/OneDrive/Documents/.config/fastfetch/asclaude.txt"
-
+      #  "$HOME/OneDrive/Documents/.config/fastfetch/logos/ascii.txt",
+      #  "$HOME/OneDrive/Documents/.config/fastfetch/logos/ascii_cathey.txt",
+      #  "$HOME/OneDrive/Documents/.config/fastfetch/logos/asclaude.txt"
+#############################################################################
+	"$HOME\OneDrive\Documents\.config\fastfetch\logos\ascii.txt",
+        "$HOME\OneDrive\Documents\.config\fastfetch\logos\ascii_cathey.txt",
+        "$HOME\OneDrive\Documents\.config\fastfetch\logos\asclaude.txt"
     )
-    fastfetch -c "C:/Users/ricks/.config/fastfetch/config.jsonc" --logo (Get-Random -InputObject $logos)
+    fastfetch -c "$HOME/OneDrive/Documents/.config/fastfetch/config.jsonc" --logo (Get-Random -InputObject $logos)
 }
 
 # Function for manual runs
 function ff {
     $logos = @(
-        "C:/Users/tasticp/OneDrive/Documents/.config/fastfetch/ascii.txt",
-        "C:/Users/tasticp/OneDrive/Documents/.config/fastfetch/ascii_cathey.txt",
-	"C:/Users/tasticp/OneDrive/Documents/.config/fastfetch/asclaude.txt"
+      #  "$HOME/OneDrive/Documents/.config/fastfetch/logos/ascii.txt",
+      #  "$HOME/OneDrive/Documents/.config/fastfetch/logos/ascii_cathey.txt",
+      #  "$HOME/OneDrive/Documents/.config/fastfetch/logos/asclaude.txt"
+#############################################################################
+	"$HOME\OneDrive\Documents\.config\fastfetch\logos\ascii.txt",
+        "$HOME\OneDrive\Documents\.config\fastfetch\logos\ascii_cathey.txt",
+        "$HOME\OneDrive\Documents\.config\fastfetch\logos\asclaude.txt"
+
     )
-    fastfetch -c "C:/Users/ricks/.config/fastfetch/config.jsonc" --logo (Get-Random -InputObject $logos)
+    fastfetch -c "$HOME/OneDrive/Documents/.config/fastfetch/config.jsonc" --logo (Get-Random -InputObject $logos)
 }
+
+##################################################   powershell_configs.txt.ps1  ##################################################
 '''
 check with
 '''

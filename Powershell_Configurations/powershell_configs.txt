@@ -72,27 +72,41 @@ try {
 } catch {}
 
 # Oh My Posh initialization
-oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/dracula.omp.json" | Invoke-Expression
+oh-my-posh init pwsh --config 'https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/catppuccin_mocha.omp.json' | Invoke-Expression
+
+# oh-my-posh init pwsh --config 'https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/dracula.omp.json' | Invoke-Expression
 
 Clear-Host
 
 # Fastfetch with random logo on startup
 if (Get-Command fastfetch -ErrorAction SilentlyContinue) {
     $logos = @(
-        "C:/Users/%USERNAME%/.config/fastfetch/ascii.txt",
-        "C:/Users/%USERNAME%/.config/fastfetch/ascii_cathey.txt"
+      #  "$HOME/OneDrive/Documents/.config/fastfetch/logos/ascii.txt",
+      #  "$HOME/OneDrive/Documents/.config/fastfetch/logos/ascii_cathey.txt",
+      #  "$HOME/OneDrive/Documents/.config/fastfetch/logos/asclaude.txt"
+#############################################################################
+	"$HOME\OneDrive\Documents\.config\fastfetch\logos\ascii.txt",
+        "$HOME\OneDrive\Documents\.config\fastfetch\logos\ascii_cathey.txt",
+        "$HOME\OneDrive\Documents\.config\fastfetch\logos\asclaude.txt"
     )
-    fastfetch -c "C:/Users/%USERNAME%/.config/fastfetch/config.jsonc" --logo (Get-Random -InputObject $logos)
+    fastfetch -c "$HOME/OneDrive/Documents/.config/fastfetch/config.jsonc" --logo (Get-Random -InputObject $logos)
 }
 
 # Function for manual runs
 function ff {
     $logos = @(
-        "C:/Users/%USERNAME%/.config/fastfetch/ascii.txt",
-        "C:/Users/%USERNAME%/.config/fastfetch/ascii_cathey.txt"
+      #  "$HOME/OneDrive/Documents/.config/fastfetch/logos/ascii.txt",
+      #  "$HOME/OneDrive/Documents/.config/fastfetch/logos/ascii_cathey.txt",
+      #  "$HOME/OneDrive/Documents/.config/fastfetch/logos/asclaude.txt"
+#############################################################################
+	"$HOME\OneDrive\Documents\.config\fastfetch\logos\ascii.txt",
+        "$HOME\OneDrive\Documents\.config\fastfetch\logos\ascii_cathey.txt",
+        "$HOME\OneDrive\Documents\.config\fastfetch\logos\asclaude.txt"
+
     )
-    fastfetch -c "C:/Users/tasticp/.config/fastfetch/config.jsonc" --logo (Get-Random -InputObject $logos)
+    fastfetch -c "$HOME/OneDrive/Documents/.config/fastfetch/config.jsonc" --logo (Get-Random -InputObject $logos)
 }
+
 ##################################################   powershell_configs.txt.ps1  ##################################################
 
 ##################################################     Other     ##################################################
