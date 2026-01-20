@@ -1,28 +1,3 @@
-Copy Paste Base file
-from
-
-a_devcontainer_del_aft_cut/
-├── .???/
-│   └── ???//
-├── ??/
-│   ├── ???/
-│   └── ???/
-├── ?.json
-└── README.md
-
-cut 
-  a_devcontainer_del_aft_cut/
-├── .???/
-│   └── ???//
-├── ??/
-│   ├── ???/
-│   └── ???/
-├── ?.json
-└── README.md
-
-into new repo
-delete a_devcontainer_del_aft_cut
-
 find template to replace the file
 https://containers.dev/templates
 https://containers.dev/features
@@ -54,6 +29,8 @@ press rebuild at the bottom left side
 ########################################
 
 
+# Optional
+
 Zed editor MCP
 ########################################
 curl -fsSL https://raw.githubusercontent.com/dagger/container-use/main/install.sh | bash
@@ -74,7 +51,7 @@ apt install -y powershell
 pwsh
 ########################################
 
-add this to zed file settings 
+add this to zed file settings with ctrl+alt+,
 '''
 "terminal": {
   "font_family": "JetBrainsMono Nerd Font"
