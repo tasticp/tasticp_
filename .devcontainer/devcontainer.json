@@ -1,10 +1,11 @@
 {
-    "name": "tasticp_",
-    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-    "features": {
-        "ghcr.io/devcontainers/features/github-cli:1": {},
-        "ghcr.io/devcontainers-extra/features/neofetch:1": {},
-        "ghcr.io/jpawlowski/devcontainer-features/powershell-extended:2.1.0": {}
-    },
-    "postCreateCommand": "echo Dev container ready"
+  "name": "tasticp_",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers-extra/features/neofetch:1": {},
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/jpawlowski/devcontainer-features/powershell-extended:2.1.0": {},
+  },
+  "postCreateCommand": "echo Dev container ready",
 }
