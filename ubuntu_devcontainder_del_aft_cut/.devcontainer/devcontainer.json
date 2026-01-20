@@ -1,0 +1,11 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/anaconda", //:latest",
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {},
+    "ghcr.io/devcontainers/features/conda:1": {},
+    "ghcr.io/devcontainers/features/anaconda:1": {},
+    "ghcr.io/jpawlowski/devcontainer-features/powershell-extended:2": {
+      "installOhMyPosh": false,
+    },
+  },
+}
