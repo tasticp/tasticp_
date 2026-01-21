@@ -2,7 +2,7 @@ find template to replace the file
 https://containers.dev/templates
 https://containers.dev/features
 
-SetUp
+SetUp (windows PRO edition)
 ########################################
 in windows
 in settings systems-advance- virtual workspace
