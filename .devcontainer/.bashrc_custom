@@ -1,0 +1,118 @@
+#!/bin/bash
+# ==============================================================================
+# Custom bashrc for tasticp_ Dev Container
+# ==============================================================================
+# Purpose: Enhanced terminal experience with git account management
+# Location: ~/.bashrc_custom (copied from .devcontainer/ during container setup)
+# Usage: Automatically sourced by ~/.bashrc when container starts
+# ==============================================================================
+
+# ==============================================================================
+# TERMINAL APPEARANCE
+# ==============================================================================
+
+# Enhanced prompt with color coding:
+# - \e[32m = Green for user@host (shows who/where you are)
+# - \e[34m = Blue for current directory (shows where you're working)
+# - \$ = Shows $ for regular user, # for root user
+export PS1="\[\e[32m\]\u@\h\[\e[0m\]:\[\e[34m\]\w\[\e[0m\]\$ "
+
+# ==============================================================================
+# FILE SYSTEM ALIASES
+# ==============================================================================
+
+# Enhanced directory listing with modern tools (falls back to basic ls if unavailable)
+alias ll='ls -la'                                    # Detailed file listing
+alias ls='exa -la --git --header --icons 2>/dev/null || ls -la'  # Modern ls with git status and icons
+
+# ==============================================================================
+# GIT WORKFLOW ALIASES
+# ==============================================================================
+# These aliases speed up common git operations for developers
+
+alias gs='git status'                                # Check repository status
+alias gp='git push'                                  # Push changes to remote
+alias gl='git pull --rebase'                         # Pull and rebase (cleaner history)
+alias gc='git commit'                                # Create commits
+alias ga='git add'                                   # Stage changes
+alias gd='git diff'                                  # Show unstaged changes
+alias gco='git checkout'                             # Switch branches/restore files
+alias gb='git branch'                                # List/create branches
+alias glog='git log --oneline --graph --decorate'   # Compact commit history with graph
+
+# ==============================================================================
+# NAVIGATION ALIASES
+# ==============================================================================
+
+alias ..='cd ..'                                     # Go up one directory
+alias ...='cd ../..'                                 # Go up two directories
+alias ....='cd ../../..'                             # Go up three directories
+
+# ==============================================================================
+# SYSTEM MONITORING ALIASES
+# ==============================================================================
+
+alias htop='htop -t'                                 # Enhanced process viewer with tree view
+alias tree='tree -C'                                 # Directory tree with colors
+
+# ==============================================================================
+# GIT COMPLETION AND STATUS INDICATORS
+# ==============================================================================
+# These environment variables enable additional git status in prompt
+export GIT_PS1_SHOWDIRTYSTATE=1                      # Show * for modified files
+export GIT_PS1_SHOWSTASHSTATE=1                      # Show $ for stashed changes
+export GIT_PS1_SHOWUNTRACKEDFILES=1                  # Show % for untracked files
+
+# ==============================================================================
+# GIT ACCOUNT MANAGEMENT FUNCTION
+# ==============================================================================
+# Purpose: Switch between different git identities for different repositories
+# Security: This only affects LOCAL git config, not GitHub permissions
+# Usage: gitaccount [tasticp|rick69]
+
+gitaccount() {
+  local name email
+  
+  # Switch statement handles predefined accounts
+  case "$1" in
+    "tasticp")
+      name="tasticp_"
+      email="ricksue99@gmail.com"
+      ;;
+    "rick69")
+      name="tasticp_"
+      email="ricksue69@gmail.com"
+      ;;
+    *)
+      # Help message for invalid or missing arguments
+      echo "Usage: gitaccount [tasticp|rick69]"
+      echo "Current git config:"
+      git config --global user.name
+      git config --global user.email
+      return 1
+      ;;
+  esac
+  
+  # Apply the new git configuration globally in this container
+  git config --global user.name "$name"
+  git config --global user.email "$email"
+  echo "Git account switched to: $name <$email>"
+}
+
+# ==============================================================================
+# GIT ACCOUNT QUICK SWITCH ALIASES
+# ==============================================================================
+# Convenience aliases for faster account switching
+alias git-tasticp='gitaccount tasticp'               # Switch to ricksue99@gmail.com
+alias git-rick69='gitaccount rick69'                 # Switch to ricksue69@gmail.com
+alias git-who='git config --global user.name && git config --global user.email'  # Show current git identity
+
+# ==============================================================================
+# WELCOME MESSAGE
+# ==============================================================================
+# Displays useful information when container starts
+
+echo -e "\e[32mWelcome to tasticp_ Dev Container!\e[0m"
+echo -e "\e[34mGit configured with: $(git config --global user.name) <$(git config --global user.email)>\e[0m"
+echo -e "\e[33mSwitch accounts with: git-tasticp | git-rick69 | git-who\e[0m"
+neofetch --version 2>/dev/null && neofetch --off --source ~/.bashrc_custom || echo "Ready to code!"

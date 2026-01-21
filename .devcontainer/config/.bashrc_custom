@@ -1,0 +1,209 @@
+#!/bin/bash
+# ==============================================================================
+# CUSTOM BASH ENVIRONMENT FOR TASTICP_ DEVELOPMENT
+# ==============================================================================
+# 
+# Purpose: Enhanced bash configuration for optimal development experience
+# Author: tasticp_ <ricksue99@gmail.com>
+# Created: 2026-01-21
+# 
+# This file provides:
+# - Beautiful terminal appearance with color coding
+# - Productivity-boosting aliases for common tasks
+# - Git account management for multiple identities
+# - Enhanced navigation and system monitoring tools
+# ==============================================================================
+
+# ==============================================================================
+# TERMINAL APPEARANCE AND PROMPT CONFIGURATION
+# ==============================================================================
+
+# Color definitions for prompt
+export COLOR_GREEN='\[\e[32m\]'    # User@host in green
+export COLOR_BLUE='\[\e[34m\]'      # Current directory in blue
+export COLOR_RESET='\[\e[0m\]'      # Reset color
+
+# Enhanced PS1 prompt with git integration
+# Format: user@hostname:current-directory $
+# Shows git branch and status when in a git repository
+export PS1="${COLOR_GREEN}\u@\h${COLOR_RESET}:${COLOR_BLUE}\w${COLOR_RESET}\$ "
+
+# Enable git completion and status in prompt
+if [ -f /etc/bash_completion.d/git ]; then
+    source /etc/bash_completion.d/git
+    export GIT_PS1_SHOWDIRTYSTATE=1      # Show * for modified files
+    export GIT_PS1_SHOWSTASHSTATE=1      # Show $ for stashed changes
+    export GIT_PS1_SHOWUNTRACKEDFILES=1  # Show % for untracked files
+    export PS1="${COLOR_GREEN}\u@\h${COLOR_RESET}:${COLOR_BLUE}\w${COLOR_BLUE}\$(__git_ps1)${COLOR_RESET}\$ "
+fi
+
+# ==============================================================================
+# FILE SYSTEM AND DIRECTORY ALIASES
+# ==============================================================================
+
+# Enhanced directory listing with fallback to basic tools
+alias ll='ls -la'  # Detailed file listing
+alias ls='exa -la --git --header --icons 2>/dev/null || ls -la'  # Modern ls with git status
+
+# Directory navigation shortcuts
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias home='cd ~'
+alias root='cd /'
+
+# File viewing and editing
+alias cat='bat --style=full --paging=never 2>/dev/null || cat'  # Enhanced cat with syntax highlighting
+alias edit='code .'  # Open current directory in VS Code
+
+# ==============================================================================
+# GIT WORKFLOW ALIASES
+# ==============================================================================
+# These aliases accelerate common git operations for efficient development
+
+# Basic git operations
+alias gs='git status'                                # Show repository status
+alias gp='git push'                                  # Push changes to remote
+alias gl='git pull --rebase'                         # Pull and rebase (cleaner history)
+alias gc='git commit'                                # Create commits
+alias ga='git add'                                   # Stage changes
+alias gd='git diff'                                  # Show unstaged changes
+alias gdc='git diff --cached'                        # Show staged changes
+alias gco='git checkout'                             # Switch branches/restore files
+alias gb='git branch'                                # List/create branches
+alias glog='git log --oneline --graph --decorate'   # Compact commit history with graph
+
+# Advanced git operations
+alias gamend='git commit --amend'                    # Amend last commit
+alias gundo='git reset --soft HEAD~1'                # Undo last commit (keep changes)
+alias gclean='git clean -fd'                         # Remove untracked files and directories
+alias gstash='git stash'                             # Stash changes
+alias gpop='git stash pop'                           # Apply stashed changes
+
+# ==============================================================================
+# SYSTEM MONITORING AND INFORMATION ALIASES
+# ==============================================================================
+
+alias htop='htop -t'                                 # Enhanced process viewer with tree view
+alias tree='tree -C'                                 # Directory tree with colors
+alias df='df -h'                                     # Human-readable disk usage
+alias du='du -sh'                                    # Summarize directory sizes
+alias ps='ps aux'                                    # Show all processes
+alias memfree='free -h'                              # Memory usage in human-readable format
+
+# ==============================================================================
+# GIT ACCOUNT MANAGEMENT SYSTEM
+# ==============================================================================
+# This section provides functionality to switch between different git identities
+# for different projects or collaboration scenarios
+
+# Git account switching function
+# Usage: gitaccount [account_name]
+# Preconfigured accounts:
+#   - tasticp: ricksue99@gmail.com (default)
+#   - rick69:  ricksue69@gmail.com
+gitaccount() {
+    local name email account_name="$1"
+    
+    # Available account configurations
+    case "$account_name" in
+        "tasticp")
+            name="tasticp_"
+            email="ricksue99@gmail.com"
+            ;;
+        "rick69")
+            name="tasticp_"
+            email="ricksue69@gmail.com"
+            ;;
+        "list")
+            echo "Available git accounts:"
+            echo "  tasticp - ricksue99@gmail.com (default)"
+            echo "  rick69  - ricksue69@gmail.com"
+            echo ""
+            git-who
+            return 0
+            ;;
+        *)
+            # Help message for invalid or missing arguments
+            echo "Usage: gitaccount [tasticp|rick69|list]"
+            echo ""
+            echo "Current git configuration:"
+            git-who
+            return 1
+            ;;
+    esac
+    
+    # Apply the new git configuration globally in this container
+    git config --global user.name "$name"
+    git config --global user.email "$email"
+    
+    # Success feedback
+    echo -e "\033[32mGit account switched to:\033[0m"
+    echo -e "  Name:  \033[33m$name\033[0m"
+    echo -e "  Email: \033[33m$email\033[0m"
+}
+
+# Convenience aliases for quick account switching
+alias git-tasticp='gitaccount tasticp'               # Switch to ricksue99@gmail.com
+alias git-rick69='gitaccount rick69'                 # Switch to ricksue69@gmail.com
+alias git-who='echo "Current git identity:" && git config --global user.name && git config --global user.email'  # Show current git identity
+alias git-list='gitaccount list'                     # List available accounts
+
+# ==============================================================================
+# DEVELOPMENT PRODUCTIVITY FUNCTIONS
+# ==============================================================================
+
+# Quick directory creation and navigation
+mkcd() {
+    mkdir -p "$1" && cd "$1"
+}
+
+# Quick search in files
+search() {
+    if [ -z "$2" ]; then
+        echo "Usage: search [pattern] [directory]"
+        echo "Example: search 'function' ./src"
+        return 1
+    fi
+    grep -r "$1" "$2" --include="*.js" --include="*.ts" --include="*.py" --include="*.json" --include="*.md"
+}
+
+# Quick port checking
+portcheck() {
+    if [ -z "$1" ]; then
+        echo "Usage: portcheck [port_number]"
+        return 1
+    fi
+    netstat -tuln | grep ":$1 "
+}
+
+# ==============================================================================
+# ENVIRONMENT INITIALIZATION
+# ==============================================================================
+
+# Welcome message with useful information
+show_welcome() {
+    echo ""
+    echo -e "\033[32m╔══════════════════════════════════════════════════════════════════════════════╗\033[0m"
+    echo -e "\033[32m║                    TASTICP_ DEVELOPMENT ENVIRONMENT                        ║\033[0m"
+    echo -e "\033[32m╚══════════════════════════════════════════════════════════════════════════════╝\033[0m"
+    echo ""
+    echo -e "\033[34m🔧 Current Git Identity:\033[0m"
+    git-who
+    echo ""
+    echo -e "\033[34m⚡ Quick Git Commands:\033[0m"
+    echo -e "   \033[33mgit-tasticp\033[0m     Switch to ricksue99@gmail.com"
+    echo -e "   \033[33mgit-rick69\033[0m       Switch to ricksue69@gmail.com"
+    echo -e "   \033[33mgit-list\033[0m        List all available accounts"
+    echo ""
+    echo -e "\033[34m🚀 Development Aliases:\033[0m"
+    echo -e "   \033[33mgs, gp, gl, gc\033[0m  Git status, push, pull, commit"
+    echo -e "   \033[33mll, tree\033[0m        Enhanced directory listings"
+    echo -e "   \033[33mmkcd [dir]\033[0m       Create and enter directory"
+    echo ""
+    echo -e "\033[32mHappy Coding! 🎉\033[0m"
+    echo ""
+}
+
+# Display welcome message on shell startup
+show_welcome

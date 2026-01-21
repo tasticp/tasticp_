@@ -1,12 +1,80 @@
+// ==============================================================================
+// DEV CONTAINER CONFIGURATION FOR TASTICP_ PROJECT
+// ==============================================================================
+// 
+// Purpose: Defines the development environment for the tasticp_ project
+// Author: tasticp_ <ricksue99@gmail.com>
+// Created: 2026-01-21
+// 
+// This configuration creates an optimized development environment with:
+// - Ubuntu base with enhanced tooling
+// - Git account management and GitHub CLI
+// - Beautiful terminal with custom aliases
+// - Docker support for containerized development
+// ==============================================================================
+
 {
-  "name": "tasticp_",
+  // ==============================================================================
+  // BASIC CONTAINER CONFIGURATION
+  // ==============================================================================
+  
+  "name": "tasticp_ Development Environment",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  
+  // ==============================================================================
+  // CONTAINER FEATURES - MODULAR ADDITIONS
+  // ==============================================================================
+  // Each feature adds specific capabilities to the base container
   "features": {
+    // GitHub CLI for repository management and authentication
     "ghcr.io/devcontainers/features/github-cli:1": {},
+    
+    // Enhanced system information display
     "ghcr.io/devcontainers-extra/features/neofetch:1": {},
+    
+    // Docker support for container-in-container workflows
     "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    
+    // PowerShell with extended features for cross-platform scripting
     "ghcr.io/jpawlowski/devcontainer-features/powershell-extended:2.1.0": {},
+    
+    // Git with enhanced features and completion
+    "ghcr.io/devcontainers/features/git:1": {}
   },
-  "postCreateCommand": "echo Dev container ready",
-  "runArgs": ["--label", "devcontainer=tasticp_"],
+  
+  // ==============================================================================
+  // VISUAL STUDIO CODE CUSTOMIZATIONS
+  // ==============================================================================
+  // Enhances the VS Code experience within the dev container
+  "customizations": {
+    "vscode": {
+      // Terminal configuration for better readability
+      "terminal.integrated.shell.linux": "/bin/bash",
+      "terminal.integrated.fontSize": 14,
+      "terminal.integrated.fontFamily": "Fira Code, Monaco, 'Courier New', monospace",
+      
+      // Git workflow optimizations
+      "git.enableSmartCommit": true,
+      "git.autofetch": true,
+      "git.confirmSync": false,
+      
+      // Editor appearance
+      "editor.fontFamily": "Fira Code, Monaco, 'Courier New', monospace",
+      "editor.fontSize": 14
+    }
+  },
+  
+  // ==============================================================================
+  // CONTAINER INITIALIZATION COMMANDS
+  // ==============================================================================
+  // Commands that run when the container is first created
+  "postCreateCommand": "bash /workspaces/.devcontainer/setup-container.sh",
+  
+  // ==============================================================================
+  // CONTAINER RUNTIME OPTIONS
+  // ==============================================================================
+  "runArgs": [
+    "--label", "devcontainer=tasticp_",
+    "--name", "tasticp_-dev"
+  ]
 }
