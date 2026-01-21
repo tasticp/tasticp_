@@ -8,4 +8,5 @@
     "ghcr.io/jpawlowski/devcontainer-features/powershell-extended:2.1.0": {},
   },
   "postCreateCommand": "echo Dev container ready",
+  "runArgs": ["--label", "devcontainer=tasticp_"],
 }
