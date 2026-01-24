@@ -1,0 +1,46 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Package files
+*.deb
+*.rpm
+*.pkg
+*.msi
+*.dmg
+
+# Temporary files
+*.tmp
+*.temp
+*~
+
+# Logs
+*.log
+
+# Configuration files with sensitive data
+config.local.*
+settings.local.*
+
+# Build artifacts
+build/
+dist/
+
+# Node modules (if present)
+node_modules/
+
+# Virtual environments
+venv/
+.venv/
+env/
